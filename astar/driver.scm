@@ -68,3 +68,36 @@
         "Done"
         (run-astar-main-test (cdr values)))))
 
+(define side-by-side
+  (lambda (n)
+    (display "Comparison of IDS and A* with n = ")
+    (display n)
+    (display "\n\n")
+    
+    (display "IDS:\n")
+    (display (iterative-deepening-search (jump-start-state n) (jump-problem n)))
+    (display "\n\n")
+    
+    (display "A*, heuristic 1:\n")
+    (display (astar-search (jump-start-state n) (jump-problem n) jump-heuristic-main))
+    (display "\n\n")
+
+    (display "A*, heuristic 2:\n")
+    (display (astar-search (jump-start-state n) (jump-problem n) jump-heuristic-best))
+    (display "\n\n")
+    (display "------------------------------------------\n\n")))
+
+(define astar-side-by-side
+  (lambda (n)
+    (display "Comparison of A* with n = ")
+    (display n)
+    (display "\n\n")
+
+    (display "A*, heuristic 1:\n")
+    (display (astar-search (jump-start-state n) (jump-problem n) jump-heuristic-main))
+    (display "\n\n")
+
+    (display "A*, heuristic 2:\n")
+    (display (astar-search (jump-start-state n) (jump-problem n) jump-heuristic-best))
+    (display "\n\n")
+    (display "------------------------------------------\n\n")))

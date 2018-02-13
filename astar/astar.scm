@@ -17,26 +17,18 @@
 (require "node.scm")
 
 ;;; Procedure:
-;;;   circle
+;;;   enqueue-func
 ;;; Parameters:
-;;;   x, a real number
-;;;   y, a real number
-;;;   r, a positive real number
-;;;   color, a color
+;;;   new-nodes, a list of nodes
+;;;   sorted-queue, a queue of nodes
 ;;; Purpose:
-;;;   Creates a drawing of a circle of radius r, centered at (x,y).
+;;;   To enqueue the new nodes into the queue in an order that is condusive to A* search.
 ;;; Produces:
-;;;   drawing, a drawing
+;;;   void
 ;;; Preconditions:
 ;;;   [No additional]
 ;;; Postconditions:
-;;;   drawing is an ellipse.  That is (drawing-ellipse? drawing) holds.
-;;;   (drawing-left drawing) = (- x r)
-;;;   (drawing-top drawing) = (- y r)
-;;;   (drawing-width drawing) = (* 2 r)
-;;;   (drawing-height drawing) = (* 2 r)
-;;;   (drawing-width drawing) = (drawing-height drawing)
-;;;   (drawing-color drawing) = color
+;;;   All nodes from new-nodes should have been transfered to sorted-queue, in the desired order.
 (define enqueue-func
      ;; write enqueue method here
      (lambda(new-nodes sorted-queue)
@@ -62,26 +54,19 @@
                  (insert remaining (cdr queue)))))))))
 
 ;;; Procedure:
-;;;   circle
+;;;   astar-search
 ;;; Parameters:
-;;;   x, a real number
-;;;   y, a real number
-;;;   r, a positive real number
-;;;   color, a color
+;;;   start-state, a state
+;;;   problem, a problem
+;;;   heuristic, a heuristic for search
 ;;; Purpose:
-;;;   Creates a drawing of a circle of radius r, centered at (x,y).
+;;;   To use the procedure search with enqueue-func and a heuristic to perform A* search.
 ;;; Produces:
-;;;   drawing, a drawing
+;;;   result, a list with a list of actions taken and the number of nodes expanded
 ;;; Preconditions:
 ;;;   [No additional]
 ;;; Postconditions:
-;;;   drawing is an ellipse.  That is (drawing-ellipse? drawing) holds.
-;;;   (drawing-left drawing) = (- x r)
-;;;   (drawing-top drawing) = (- y r)
-;;;   (drawing-width drawing) = (* 2 r)
-;;;   (drawing-height drawing) = (* 2 r)
-;;;   (drawing-width drawing) = (drawing-height drawing)
-;;;   (drawing-color drawing) = color
+;;;   [No additional]
 (define astar-search
   (lambda(start-state problem heuristic)
     (search
