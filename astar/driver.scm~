@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ;; Lab: Title
 ;; CSC 261 
 ;;
@@ -9,3 +10,37 @@
 ;;
 ;; Provides
 ;;   (test-astar)
+=======
+;; Lab: Heuristic Search
+;; CSC 261 
+;;
+;; File
+;;   driver.scm
+;;
+;; Summary
+;;   A collection of tests used to check A* search 
+;;
+;; Provides
+;;   (enqueue-func new-nodes sorted-queue)
+;;   (astar-search start-state problem heuristic)
+
+(require "search.scm")
+(require "problem.scm")
+(require "sort.scm")
+(require "node.scm")
+(requie "jump.scm")
+(require rackunit)
+(require rackunit/text-ui)
+
+(define test-astar
+  (test-suite
+   "Tests of astar"
+   (test-case
+    "small problems"
+    (let ([sol (astar-search (jump-start-state 10) (jump-problem 10) heuristic)])
+      (check-equals? (equals? #f sol)
+                     #f
+                     "works on smallest problem")))))
+
+(run-tests test-astar)
+>>>>>>> 76d6f5738938560d570e65ce7f6e4aaf80725f7e
