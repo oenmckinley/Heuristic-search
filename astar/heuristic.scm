@@ -10,27 +10,7 @@
 ;; Provides
 ;;   (jump-heuristic-main node)
 ;;   (jump-heuristic-best node)
-;;   (jump-heuristic-alt-1 node);;; Procedure:
-;;;   circle
-;;; Parameters:
-;;;   x, a real number
-;;;   y, a real number
-;;;   r, a positive real number
-;;;   color, a color
-;;; Purpose:
-;;;   Creates a drawing of a circle of radius r, centered at (x,y).
-;;; Produces:
-;;;   drawing, a drawing
-;;; Preconditions:
-;;;   [No additional]
-;;; Postconditions:
-;;;   drawing is an ellipse.  That is (drawing-ellipse? drawing) holds.
-;;;   (drawing-left drawing) = (- x r)
-;;;   (drawing-top drawing) = (- y r)
-;;;   (drawing-width drawing) = (* 2 r)
-;;;   (drawing-height drawing) = (* 2 r)
-;;;   (drawing-width drawing) = (drawing-height drawing)
-;;;   (drawing-color drawing) = color
+;;   (jump-heuristic-alt-1 node)
 ;;   (jump-heuristic-alt-2 node)
 ;;   (jump-heuristic-alt-3 node)
 ;;   (jump-heuristic-alt-4 node)
@@ -42,27 +22,7 @@
 ;;;   x, a real number
 ;;;   y, a real number
 ;;;   r, a positive real number
-;;;   color, a color;;; Procedure:
-;;;   circle
-;;; Parameters:
-;;;   x, a real number
-;;;   y, a real number
-;;;   r, a positive real number
 ;;;   color, a color
-;;; Purpose:
-;;;   Creates a drawing of a circle of radius r, centered at (x,y).
-;;; Produces:
-;;;   drawing, a drawing
-;;; Preconditions:
-;;;   [No additional]
-;;; Postconditions:
-;;;   drawing is an ellipse.  That is (drawing-ellipse? drawing) holds.
-;;;   (drawing-left drawing) = (- x r)
-;;;   (drawing-top drawing) = (- y r)
-;;;   (drawing-width drawing) = (* 2 r)
-;;;   (drawing-height drawing) = (* 2 r)
-;;;   (drawing-width drawing) = (drawing-height drawing)
-;;;   (drawing-color drawing) = color
 ;;; Purpose:
 ;;;   Creates a drawing of a circle of radius r, centered at (x,y).
 ;;; Produces:
@@ -213,27 +173,7 @@
 ;;; Procedure:
 ;;;   circle
 ;;; Parameters:
-;;;   x, a real n;;; Procedure:
-;;;   circle
-;;; Parameters:
 ;;;   x, a real number
-;;;   y, a real number
-;;;   r, a positive real number
-;;;   color, a color
-;;; Purpose:
-;;;   Creates a drawing of a circle of radius r, centered at (x,y).
-;;; Produces:
-;;;   drawing, a drawing
-;;; Preconditions:
-;;;   [No additional]
-;;; Postconditions:
-;;;   drawing is an ellipse.  That is (drawing-ellipse? drawing) holds.
-;;;   (drawing-left drawing) = (- x r)
-;;;   (drawing-top drawing) = (- y r)
-;;;   (drawing-width drawing) = (* 2 r)
-;;;   (drawing-height drawing) = (* 2 r)
-;;;   (drawing-width drawing) = (drawing-height drawing)
-;;;   (drawing-color drawing) = colorumber
 ;;;   y, a real number
 ;;;   r, a positive real number
 ;;;   color, a color
@@ -270,27 +210,7 @@
 ;;; Purpose:
 ;;;   Creates a drawing of a circle of radius r, centered at (x,y).
 ;;; Produces:
-;;;   drawing, a;;; Procedure:
-;;;   circle
-;;; Parameters:
-;;;   x, a real number
-;;;   y, a real number
-;;;   r, a positive real number
-;;;   color, a color
-;;; Purpose:
-;;;   Creates a drawing of a circle of radius r, centered at (x,y).
-;;; Produces:
 ;;;   drawing, a drawing
-;;; Preconditions:
-;;;   [No additional]
-;;; Postconditions:
-;;;   drawing is an ellipse.  That is (drawing-ellipse? drawing) holds.
-;;;   (drawing-left drawing) = (- x r)
-;;;   (drawing-top drawing) = (- y r)
-;;;   (drawing-width drawing) = (* 2 r)
-;;;   (drawing-height drawing) = (* 2 r)
-;;;   (drawing-width drawing) = (drawing-height drawing)
-;;;   (drawing-color drawing) = color drawing
 ;;; Preconditions:
 ;;;   [No additional]
 ;;; Postconditions:
