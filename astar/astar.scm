@@ -16,9 +16,6 @@
 (require "sort.scm")
 (require "node.scm")
 
-
-
-
 (define enqueue-func
      ;; write enqueue method here
      (lambda(new-nodes sorted-queue)
