@@ -2,13 +2,20 @@ References:
 
   Written/online sources used:
 
-    enqueue-func was copied from provided code in search.scm file from Lab 2 (specifically, the
-    uniform-cost-search function)
+    All programing used that is not housed within astar.scm, driver.scm, or heuristic.scm 
+    was supplied for the lab assignment.
+    
+    Within astar.scm, the function enqueue-func was copied from the supplied uniform-cost-
+    search function in Lab 2 for this course.
 
+    Within driver.scm and heuristic.scm, all code was written by our pair.
+
+    All text in references.txt and output.txt was as specified, and was not copied or 
+    forged in any way.
 
   Help obtained:
 
-     none
+    None
 
 Academic honesty certification:
   Our initials below confirm that the above list of sources

@@ -17,7 +17,7 @@
 ;;   (decide-momentum total traveled m)
 
 ;;; Procedure:
-;;;   circle
+;;;   jump-heuristic-main
 ;;; Parameters:
 ;;;   x, a real number
 ;;;   y, a real number
