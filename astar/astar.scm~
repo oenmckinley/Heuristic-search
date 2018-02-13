@@ -16,6 +16,7 @@
 (require "sort.scm")
 (require "node.scm")
 
+<<<<<<< HEAD
 ;;; Procedure:
 ;;;   circle
 ;;; Parameters:
@@ -37,6 +38,8 @@
 ;;;   (drawing-height drawing) = (* 2 r)
 ;;;   (drawing-width drawing) = (drawing-height drawing)
 ;;;   (drawing-color drawing) = color
+=======
+>>>>>>> 76d6f5738938560d570e65ce7f6e4aaf80725f7e
 (define enqueue-func
      ;; write enqueue method here
      (lambda(new-nodes sorted-queue)
