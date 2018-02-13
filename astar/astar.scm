@@ -1,26 +1,25 @@
+;; Lab: Heuristic Search
+;; CSC 261 
+;;
+;; File
+;;   astar.scm
+;;
+;; Summary
+;;   A collection of functions used to implement A* search 
+;;
+;; Provides
+;;   (enqueue-func new-nodes sorted-queue)
+;;   (astar-search start-state problem heuristic)
+
 (require "search.scm")
 (require "problem.scm")
 (require "sort.scm")
 (require "node.scm")
-(require "jump.scm")
-(require "jump-heuristic.scm")
-(load "8puzzle.scm")
 
-(define eight-puzzle (eight-puzzle-problem))
 
-(define zero-fun (lambda (x) 0))
 
-(define eight-puzzle-state (random-eight-puzzle-state 10))
 
-(define heuristic-func
-  (lambda(node)
-    (eight-puzzle-misplaced node)))
-
-(define astar
-  (lambda(start-state problem)
-    (search
-     start-state
-     problem
+(define enqueue-func
      ;; write enqueue method here
      (lambda(new-nodes sorted-queue)
               ;; Sort the new new nodes according to path cost
@@ -42,11 +41,13 @@
                  (insert (cdr remaining) queue))) ;;  rest inserted into queue
           (else
            (cons (car queue) ;; List of the queue front and insert remaining
-                 (insert remaining (cdr queue))))))))
-     ;; write node-total-cost heuristic here
-     heuristic-func)))
+                 (insert remaining (cdr queue)))))))))
 
-;;<blink> MAKE SURE TO DOCUMENT THE UCF SEARCH FROM THE PREVIOUS LAB <blink>
+(define astar-search
+  (lambda(start-state problem heuristic)
+    (search
+     start-state
+     problem
+     enqueue-func
+     heuristic)))
 
-(display eight-puzzle-state)
-(astar eight-puzzle-state eight-puzzle)
