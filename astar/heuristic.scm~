@@ -1,0 +1,26 @@
+(define heuristic
+  (lambda(node)
+    (let ([total (car node)] [travelled (cadr node)] [m (caddr node)])
+      (cond
+        [(decide-momentum total travelled (+ m 2)) (+ m 2)]
+        [(decide-momentum total travelled (+ m 1)) (+ m 1)]
+        [(decide-momentum total travelled m) m]
+        [else (- m 1)]))))
+
+(define heuristic2
+  (lambda(node)
+    (let ([total (car node)] [travelled (cadr node)] [m (caddr node)])
+      (cond
+        [(decide-momentum total travelled (+ m 2)) (expt (- total travelled (/ (* (+ m 3) (+ m 2)) 2)) 2)]
+        [(decide-momentum total travelled (+ m 1)) (expt (- total travelled (/ (* (+ m 2) (+ m 1)) 2)) 2)]
+        [(decide-momentum total travelled m) (expt (- total travelled (/ (* (+ m 1) m) 2)) 2)]
+        [else (expt (- total travelled (/ (* m (- m 1)) 2)) 2)]))))
+
+(define heuristic3
+  (lambda(node)
+    (let ([total (car node)] [travelled (cadr node)] [m (caddr node)])
+      (expt (- total travelled (/ (* m (+ m 1)) 2)) 2))))
+
+(define decide-momentum
+  (lambda (total travelled m)
+    (< 0 (- total travelled (/ (* (+ m 1) m) 2)))))

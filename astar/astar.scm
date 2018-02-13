@@ -16,9 +16,27 @@
 (require "sort.scm")
 (require "node.scm")
 
-
-
-
+;;; Procedure:
+;;;   circle
+;;; Parameters:
+;;;   x, a real number
+;;;   y, a real number
+;;;   r, a positive real number
+;;;   color, a color
+;;; Purpose:
+;;;   Creates a drawing of a circle of radius r, centered at (x,y).
+;;; Produces:
+;;;   drawing, a drawing
+;;; Preconditions:
+;;;   [No additional]
+;;; Postconditions:
+;;;   drawing is an ellipse.  That is (drawing-ellipse? drawing) holds.
+;;;   (drawing-left drawing) = (- x r)
+;;;   (drawing-top drawing) = (- y r)
+;;;   (drawing-width drawing) = (* 2 r)
+;;;   (drawing-height drawing) = (* 2 r)
+;;;   (drawing-width drawing) = (drawing-height drawing)
+;;;   (drawing-color drawing) = color
 (define enqueue-func
      ;; write enqueue method here
      (lambda(new-nodes sorted-queue)
@@ -43,6 +61,27 @@
            (cons (car queue) ;; List of the queue front and insert remaining
                  (insert remaining (cdr queue)))))))))
 
+;;; Procedure:
+;;;   circle
+;;; Parameters:
+;;;   x, a real number
+;;;   y, a real number
+;;;   r, a positive real number
+;;;   color, a color
+;;; Purpose:
+;;;   Creates a drawing of a circle of radius r, centered at (x,y).
+;;; Produces:
+;;;   drawing, a drawing
+;;; Preconditions:
+;;;   [No additional]
+;;; Postconditions:
+;;;   drawing is an ellipse.  That is (drawing-ellipse? drawing) holds.
+;;;   (drawing-left drawing) = (- x r)
+;;;   (drawing-top drawing) = (- y r)
+;;;   (drawing-width drawing) = (* 2 r)
+;;;   (drawing-height drawing) = (* 2 r)
+;;;   (drawing-width drawing) = (drawing-height drawing)
+;;;   (drawing-color drawing) = color
 (define astar-search
   (lambda(start-state problem heuristic)
     (search

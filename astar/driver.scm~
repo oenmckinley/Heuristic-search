@@ -1,0 +1,11 @@
+;; Lab: Title
+;; CSC 261 
+;;
+;; File
+;;   search.scm
+;;
+;; Summary
+;;   A collection of tests for our A* search.
+;;
+;; Provides
+;;   (test-astar)
