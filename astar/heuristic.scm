@@ -19,148 +19,83 @@
 ;;; Procedure:
 ;;;   jump-heuristic-main
 ;;; Parameters:
-;;;   x, a real number
-;;;   y, a real number
-;;;   r, a positive real number
-;;;   color, a color
+;;;   node, a node
 ;;; Purpose:
-;;;   Creates a drawing of a circle of radius r, centered at (x,y).
+;;;   Give a heuristic for the jump problem
 ;;; Produces:
-;;;   drawing, a drawing
+;;;   val, an integer
 ;;; Preconditions:
 ;;;   [No additional]
 ;;; Postconditions:
-;;;   drawing is an ellipse.  That is (drawing-ellipse? drawing) holds.
-;;;   (drawing-left drawing) = (- x r)
-;;;   (drawing-top drawing) = (- y r)
-;;;   (drawing-width drawing) = (* 2 r)
-;;;   (drawing-height drawing) = (* 2 r)
-;;;   (drawing-width drawing) = (drawing-height drawing)
-;;;   (drawing-color drawing) = color
+;;;   val must be generally higher for worse choices, lower for better choices
 (define jump-heuristic-main
   (lambda(node)
     (let ([total (car node)] [traveled (cadr node)] [m (caddr node)])
       (- total traveled (/ (* m (+ m 1)) 2)))))
 
 ;;; Procedure:
-;;;   circle
+;;;   jump-heuristic-best
 ;;; Parameters:
-;;;   x, a real number
-;;;   y, a real number
-;;;   r, a positive real number
-;;;   color, a color
+;;;   node, a node
 ;;; Purpose:
-;;;   Creates a drawing of a circle of radius r, centered at (x,y).
+;;;   Give a heuristic for the jump problem
 ;;; Produces:
-;;;   drawing, a drawing
+;;;   val, an integer
 ;;; Preconditions:
 ;;;   [No additional]
 ;;; Postconditions:
-;;;   drawing is an ellipse.  That is (drawing-ellipse? drawing) holds.
-;;;   (drawing-left drawing) = (- x r)
-;;;   (drawing-top drawing) = (- y r)
-;;;   (drawing-width drawing) = (* 2 r)
-;;;   (drawing-height drawing) = (* 2 r)
-;;;   (drawing-width drawing) = (drawing-height drawing)
-;;;   (drawing-color drawing) = color
+;;;   val must be generally higher for worse choices, lower for better choices
 (define jump-heuristic-best
-  (lambda(node);;; Procedure:
-;;;   circle
-;;; Parameters:
-;;;   x, a real number
-;;;   y, a real number
-;;;   r, a positive real number
-;;;   color, a color
-;;; Purpose:
-;;;   Creates a drawing of a circle of radius r, centered at (x,y).
-;;; Produces:
-;;;   drawing, a drawing
-;;; Preconditions:
-;;;   [No additional]
-;;; Postconditions:
-;;;   drawing is an ellipse.  That is (drawing-ellipse? drawing) holds.
-;;;   (drawing-left drawing) = (- x r)
-;;;   (drawing-top drawing) = (- y r)
-;;;   (drawing-width drawing) = (* 2 r)
-;;;   (drawing-height drawing) = (* 2 r)
-;;;   (drawing-width drawing) = (drawing-height drawing)
-;;;   (drawing-color drawing) = color
+  (lambda(node)
     (let ([total (car node)] [traveled (cadr node)] [m (caddr node)])
       (expt (- total traveled (/ (* m (+ m 1)) 2)) 2))))
 
 ;;; Procedure:
-;;;   circle
+;;;   jump-heuristic-alt-1
 ;;; Parameters:
-;;;   x, a real number
-;;;   y, a real number
-;;;   r, a positive real number
-;;;   color, a color
+;;;   node, a node
 ;;; Purpose:
-;;;   Creates a drawing of a circle of radius r, centered at (x,y).
+;;;   Give a heuristic for the jump problem
 ;;; Produces:
-;;;   drawing, a drawing
+;;;   val, an integer
 ;;; Preconditions:
 ;;;   [No additional]
 ;;; Postconditions:
-;;;   drawing is an ellipse.  That is (drawing-ellipse? drawing) holds.
-;;;   (drawing-left drawing) = (- x r)
-;;;   (drawing-top drawing) = (- y r)
-;;;   (drawing-width drawing) = (* 2 r)
-;;;   (drawing-height drawing) = (* 2 r)
-;;;   (drawing-width drawing) = (drawing-height drawing)
-;;;   (drawing-color drawing) = color
+;;;   val must be generally higher for worse choices, lower for better choices
 (define jump-heuristic-alt-1
   (lambda(node)
     (let ([total (car node)] [traveled (cadr node)] [m (caddr node)])
       (- total traveled m))))
 
 ;;; Procedure:
-;;;   circle
+;;;   jump-heuristic-alt-2
 ;;; Parameters:
-;;;   x, a real number
-;;;   y, a real number
-;;;   r, a positive real number
-;;;   color, a color
+;;;   node, a node
 ;;; Purpose:
-;;;   Creates a drawing of a circle of radius r, centered at (x,y).
+;;;   Give a heuristic for the jump problem
 ;;; Produces:
-;;;   drawing, a drawing
+;;;   val, an integer
 ;;; Preconditions:
 ;;;   [No additional]
 ;;; Postconditions:
-;;;   drawing is an ellipse.  That is (drawing-ellipse? drawing) holds.
-;;;   (drawing-left drawing) = (- x r)
-;;;   (drawing-top drawing) = (- y r)
-;;;   (drawing-width drawing) = (* 2 r)
-;;;   (drawing-height drawing) = (* 2 r)
-;;;   (drawing-width drawing) = (drawing-height drawing)
-;;;   (drawing-color drawing) = color
+;;;   val must be generally higher for worse choices, lower for better choices
 (define jump-heuristic-alt-2
   (lambda(node)
     (let ([total (car node)] [traveled (cadr node)] [m (caddr node)])
       (- total traveled (expt m 2)))))
 
 ;;; Procedure:
-;;;   circle
+;;;   jump-heuristic-alt-3
 ;;; Parameters:
-;;;   x, a real number
-;;;   y, a real number
-;;;   r, a positive real number
-;;;   color, a color
+;;;   node, a node
 ;;; Purpose:
-;;;   Creates a drawing of a circle of radius r, centered at (x,y).
+;;;   Give a heuristic for the jump problem
 ;;; Produces:
-;;;   drawing, a drawing
+;;;   val, an integer
 ;;; Preconditions:
 ;;;   [No additional]
 ;;; Postconditions:
-;;;   drawing is an ellipse.  That is (drawing-ellipse? drawing) holds.
-;;;   (drawing-left drawing) = (- x r)
-;;;   (drawing-top drawing) = (- y r)
-;;;   (drawing-width drawing) = (* 2 r)
-;;;   (drawing-height drawing) = (* 2 r)
-;;;   (drawing-width drawing) = (drawing-height drawing)
-;;;   (drawing-color drawing) = color
+;;;   val must be generally higher for worse choices, lower for better choices
 (define jump-heuristic-alt-3
   (lambda(node)
     (let ([total (car node)] [traveled (cadr node)] [m (caddr node)])
@@ -171,56 +106,44 @@
         [else (- m 1)]))))
 
 ;;; Procedure:
-;;;   circle
+;;;   jump-heuristic-alt-4
 ;;; Parameters:
-;;;   x, a real number
-;;;   y, a real number
-;;;   r, a positive real number
-;;;   color, a color
+;;;   node, a node
 ;;; Purpose:
-;;;   Creates a drawing of a circle of radius r, centered at (x,y).
+;;;   Give a heuristic for the jump problem
 ;;; Produces:
-;;;   drawing, a drawing
+;;;   val, an integer
 ;;; Preconditions:
 ;;;   [No additional]
 ;;; Postconditions:
-;;;   drawing is an ellipse.  That is (drawing-ellipse? drawing) holds.
-;;;   (drawing-left drawing) = (- x r)
-;;;   (drawing-top drawing) = (- y r)
-;;;   (drawing-width drawing) = (* 2 r)
-;;;   (drawing-height drawing) = (* 2 r)
-;;;   (drawing-width drawing) = (drawing-height drawing)
-;;;   (drawing-color drawing) = color
+;;;   val must be generally higher for worse choices, lower for better choices
 (define jump-heuristic-alt-4
   (lambda(node)
     (let ([total (car node)] [traveled (cadr node)] [m (caddr node)])
       (cond
-        [(decide-momentum total traveled (+ m 2)) (expt (- total traveled (/ (* (+ m 3) (+ m 2)) 2)) 2)]
-        [(decide-momentum total traveled (+ m 1)) (expt (- total traveled (/ (* (+ m 2) (+ m 1)) 2)) 2)]
-        [(decide-momentum total traveled m) (expt (- total traveled (/ (* (+ m 1) m) 2)) 2)]
-        [else (expt (- total traveled (/ (* m (- m 1)) 2)) 2)]))))
+        [(decide-momentum total traveled (+ m 2))
+         (expt (- total traveled (/ (* (+ m 3) (+ m 2)) 2)) 2)]
+        [(decide-momentum total traveled (+ m 1))
+         (expt (- total traveled (/ (* (+ m 2) (+ m 1)) 2)) 2)]
+        [(decide-momentum total traveled m)
+         (expt (- total traveled (/ (* (+ m 1) m) 2)) 2)]
+        [else
+         (expt (- total traveled (/ (* m (- m 1)) 2)) 2)]))))
 
 ;;; Procedure:
-;;;   circle
+;;;   decide-momentum
 ;;; Parameters:
-;;;   x, a real number
-;;;   y, a real number
-;;;   r, a positive real number
-;;;   color, a color
+;;;   total, an integer
+;;;   traveled, an integer
+;;;   m, an integer
 ;;; Purpose:
-;;;   Creates a drawing of a circle of radius r, centered at (x,y).
+;;;   Find whether the calculation desired gives a positive (#t) or negative (#f) value.
 ;;; Produces:
-;;;   drawing, a drawing
+;;;   result, a boolean
 ;;; Preconditions:
 ;;;   [No additional]
 ;;; Postconditions:
-;;;   drawing is an ellipse.  That is (drawing-ellipse? drawing) holds.
-;;;   (drawing-left drawing) = (- x r)
-;;;   (drawing-top drawing) = (- y r)
-;;;   (drawing-width drawing) = (* 2 r)
-;;;   (drawing-height drawing) = (* 2 r)
-;;;   (drawing-width drawing) = (drawing-height drawing)
-;;;   (drawing-color drawing) = color
+;;;   [No additional]
 (define decide-momentum
   (lambda (total traveled m)
     (< 0 (- total traveljump-heuristiced (/ (* (+ m 1) m) 2)))))
