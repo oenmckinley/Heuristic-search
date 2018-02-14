@@ -1,0 +1,13 @@
+Script started on Tue 13 Feb 2018 06:43:22 PM CST
+
+$      mzscheme -l lang/plt-pretty-big-text.ss -f driver.scm 
+Testing Main A* Heuristic . . .
+4 success(es) 0 failure(s) 0 error(s) 4 test(s) run
+
+Testing Best A* Heuristic . . .
+4 success(es) 0 failure(s) 0 error(s) 4 test(s) run
+
+$ exit
+exit
+
+Script done on Tue 13 Feb 2018 06:43:58 PM CST
